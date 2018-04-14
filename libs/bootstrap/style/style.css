@@ -1,0 +1,532 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 17, 2018, 6:18:55 PM
+    Author     : kasam
+
+body font families
+*/
+
+body{
+   
+    font-family: 'BioRhyme Expanded', serif;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+/*===========LOGIN  FORM START================*/
+.login_body{
+    /*background-color: #0489B1;*/
+    background-color: #0A2229;
+    
+}
+.login_container{
+    padding: 10px;
+    text-align: center;
+    color: white;
+  
+}
+.login_form{
+    max-width: 500px;
+    border-radius:3px;
+    margin: 0 auto;
+    
+     background-color: #DBA901;
+    height: auto;
+    margin-top: 2%;
+    padding: 10px;
+    padding-bottom: 40px;
+}
+.login_top_content{
+    text-align: center;
+    
+   
+}
+.login_attr{
+    max-width: 330px;
+    height: auto;
+    font-family: sans-serif;
+    margin: 0 auto;
+}
+.user_cred{
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.my_button{
+    width: 80%;
+    margin-left: 10%;
+   
+   
+}
+.pass_reset{
+    margin-top: 15px;
+}
+.reset_a{
+    text-decoration: none;
+    color: #337ab7;
+   margin-left: 10px;
+  
+}
+.resetrow{
+    margin-top: 35px;
+    text-align: center;
+    
+}
+.reset a:hover{
+    color: blue;
+    text-decoration: none;
+ 
+}
+
+@media only screen and (max-width: 735px) {
+    
+    .login_form {
+        width: 100%;
+    }
+
+}
+
+
+
+
+
+/*===========LOGIN  FORM END================*/
+
+
+
+
+/*===========HOME/NAVBAR  DESIGN START================*/
+
+
+/* remove outer padding */
+
+.main .row{
+    padding: 0px;
+    margin: 0px;
+}
+
+
+
+nav.sidebar.navbar {
+    border-radius: 0px;
+
+}
+
+nav.sidebar, .main{
+    -webkit-transition: margin 200ms ease-out;
+    -moz-transition: margin 200ms ease-out;
+    -o-transition: margin 200ms ease-out;
+    transition: margin 200ms ease-out;
+}
+
+/* Add gap to nav and right windows.*/
+.main{
+    padding: 10px 10px 0 10px;
+}
+.sidebar{
+    /*background-color: #0a2835;*/
+    background-color: #270014;
+}
+
+/* .....NavBar: Icon only with coloring/layout.....*/
+
+/*small/medium side display*/
+@media (min-width: 768px) {
+
+    /*Allow main to be next to Nav*/
+    .main{
+        position: absolute;
+        width: calc(100% - 40px); /*keeps 100% minus nav size*/
+        margin-left: 40px;
+        float: right;
+    }
+
+    /*=== OPTIONAL=====lets nav bar to be showed on mouseover
+    nav.sidebar:hover + .main{
+        margin-left: 200px;
+    }
+        */
+        
+    /*Center Brand*/
+    nav.sidebar.navbar.sidebar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+        margin-left: 0px;
+    }
+    /*Center Brand*/
+    nav.sidebar .navbar-brand, nav.sidebar .navbar-header{
+        text-align: center;
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    /*Center Icons*/
+    nav.sidebar a{
+        padding-right: 13px;
+    }
+
+    /*adds border top to first nav box */
+    nav.sidebar .navbar-nav > li:first-child{
+        border-top: 1px #e5e5e5 solid;
+    }
+
+    /*adds border to bottom nav boxes*/
+    nav.sidebar .navbar-nav > li{
+        border-bottom: 1px #e5e5e5 solid;
+    }
+
+    /* Colors/style dropdown box*/
+    nav.sidebar .navbar-nav .open .dropdown-menu {
+        position: static;
+        float: none;
+        width: auto;
+        margin-top: 0;
+        background-color: #2a94f7;
+        border: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    /*allows nav box to use 100% width*/
+    nav.sidebar .navbar-collapse, nav.sidebar .container-fluid{
+        padding: 0 0px 0 0px;
+    }
+
+    /*colors dropdown box text */
+    .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+        color: #777;
+    }
+
+    /*gives sidebar width/height*/
+    nav.sidebar{
+        width: 200px;
+        height: 100%;
+        margin-left: -160px;
+        float: left;
+        z-index: 8000;
+        margin-bottom: 0px;
+    }
+
+    /*give sidebar 100% width;*/
+    nav.sidebar li {
+        width: 100%;
+    }
+    .panel-default{ 
+        width:99%;
+       
+    }
+   
+    /* ==OPTIONAL=== Move nav to full on mouse over*/
+    
+   /* nav.sidebar:hover{
+        margin-left: 0px;
+    }*/
+   
+    /*for hiden things when navbar hidden*/
+    .forAnimate{
+        opacity: 0;
+    }
+}
+
+/* .....NavBar: Fully showing nav bar..... */
+
+@media (min-width: 1330px) {
+
+    /*Allow main to be next to Nav*/
+    .main{
+        width: calc(100% - 200px); /*keeps 100% minus nav size*/
+        margin-left: 200px;
+    }
+
+    /*Show all nav*/
+    nav.sidebar{
+        margin-left: 0px;
+        float: left;
+    }
+    /*Show hidden items on nav*/
+    nav.sidebar .forAnimate{
+        opacity: 1;
+    }
+}
+
+nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
+    color: #CCC;
+    background-color: transparent;
+}
+
+nav:hover .forAnimate{
+    opacity: 1;
+}
+section{
+    padding-left: 15px;
+}
+
+/*===========HOME/NAVBAR  DESIGN END================*/
+
+/*===========LOGIN PANEL START================*/
+
+@media only screen and (max-width: 768px) {
+    .loginpanel{
+        background-color:#196486;
+    }
+    .main_card{
+        background-color: red;   
+    }
+
+
+}
+/*===========LOGIN PANEL END================*/
+
+
+/*===========Stock Balance DESIGN START================*/
+
+.main_row{
+    height: 300px;
+    background-color: #98bbb9;
+    width: 23.5%;
+    margin-left: 10px;
+    position: relative;
+    float: left;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #84abbe;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+.mat_image{
+    width: 100%;
+    height: 180px;
+}
+.mat_name, .another{
+    width:100%;
+    font-size: 18px;
+    
+
+}
+@media only screen and (max-width: 900px) {
+    .main_row{
+        width: 30%;
+        font-size: 20px;
+        margin-left: 15px;
+
+    }
+
+}
+@media only screen and (max-width: 700px) {
+    .main_row{
+        width: 45%;
+        margin-left: 15px;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .main_row{
+        width: 100%;
+        margin:0 auto;
+        margin-top: 10px;
+        
+       
+    }
+}
+
+/*===========Stock Balance DESIGN END================*/
+
+/*===========Search Form DESIGN START================*/
+
+.main_search{
+    background-color: red;
+    height: 40px;
+    padding:3px;
+    background-color: #0a2835;
+    border-radius: 5px;
+    
+}
+.main_sr{
+    font-size: 18px;
+}
+
+/*===========Search Form DESIGN END================*/
+
+/*===========Sales Head DESIGN START================*/
+
+.main_header{
+    background-color: red;
+}
+
+/*===========Sales Head DESIGN END================*/
+
+
+
+/*===========Customer Search DESIGN START================*/
+
+#page-wrapper {
+  max-width: 640px;
+  background: #FFFFFF;
+  padding: 1em;
+  margin: 1em auto;
+  border-radius: 3px;
+  
+}
+
+.customer_s_input{
+    height: 40px;
+    font-size: 1.2em;
+    border-radius: 3px;
+    border: 1px solid #D9D9D9;
+    width: 100%;
+    position: relative;
+   
+}
+.cus_label{
+    color: red;
+}
+
+input[type="date"] {
+   display:block;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    height: 40px;
+    width: 35%;
+    border-radius: 3px;
+     border: 1px solid #D9D9D9;
+     text-align: center;
+     padding: 8px;
+     float: left;
+     margin-left: -8px;
+}
+.issue_button{
+    margin-left: 5px;
+    width: 25%;
+    height: 40px;
+    background-color: #4cae4c;
+    color:white;
+    
+    letter-spacing: 1px;
+    font-family: sans-serif;
+}
+
+ 
+input[type="date"]::before {
+	color: #6E6E6E;
+	content: attr(placeholder);
+        font-size: 15px;
+}
+input[type="date"] {
+	color: #ffffff;
+}
+input[type="date"]:focus,
+input[type="date"]:valid {
+	color: #666666;
+}
+input[type="date"]:focus::before,
+input[type="date"]:valid::before {
+	content: "" !important;
+}
+
+
+@media only screen and (max-width: 500px) {
+    .customer_s_input{
+        font-size: 12px;
+    }
+}
+#page-wrapper{
+    background-color: white;
+    border:1px solid #D8D8D8;
+    color: #6E6E6E;
+     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    
+}
+.customer_label{
+    width: 100%;
+    padding: 3px;
+    text-align: center;
+    background-color: #F2F2F2;
+    border-radius: 3px;
+    font-family: sans-serif;
+    font-weight: normal;
+}
+
+/*===========Customer Search DESIGN END================*/
+/*====BARCODE, QTY, PRICE INPUTS DESIGN START===*/
+
+.barcode_m{
+    max-width: 55%;
+}
+.barcode_qty{
+    max-width: 18%;
+    margin-left: 5px;
+    
+}
+.barcode_qty_select{
+     max-width: 39.5%;
+    margin-left: 5px;
+}
+.barcode_price{
+    max-width: 21%;
+    margin-left: 5px;
+    font-family: sans-serif;
+}
+.barcode_m, .barcode_qty{
+   border-radius: 5px;
+}
+.mainsales{
+    background-color: #E6E6E6;
+}
+
+.divider{
+    background-color: #4cae4c;
+    height: 3px;
+    margin-top: 10px;
+    border-radius: 3px;
+}
+
+/*====BARCODE, QTY, PRICE INPUTS DESIGN END===*/
+.mysidebar{
+    background-color: #0B2F3A;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .panel-body{ max-width: 98%;
+    }
+}
+/*===========User Table design Start================*/
+
+.thead_in{
+    background-color: #F5BCA9;
+    font-family: sans-serif;
+}
+/*===========User Table design END================*/
+
+.user_info{
+    height: 250px;
+}
+
+/*===========USER SELECT DESIGN START=====*/
+.user_select{
+    border-radius: 3px;
+    padding: 2px;
+    
+}
+
+/*DOUBLE CHECK THIS*/
+.main_footer{
+    background-color:red;
+    text-align: center;
+}
+/*Error Page start*/
+.error_page{
+    background-color: #0A2229;
+    font-family: sans-serif;
+    text-align: center;
+    margin-top: 20%;
+    color: white;
+}
+.error_page h1{
+    color: red;
+    font-size: 70px;
+    
+}
+/*Error Page End*/
+
+
