@@ -20,5 +20,22 @@ class Validations{
        filter_input(INPUT_POST, $data);
    }
    
+   
+   
+   public static function validemail($email){
+       
+       if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
+           
+               return $email;
+               
+            } else{
+                
+                return null;
+            }
+   }
+   
+   
+   
+   
 }
 

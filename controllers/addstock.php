@@ -1,18 +1,18 @@
 <?php
-require_once'./core/config.php';
 require_once'./models/user.php';
+require_once './core/validations/formcontrols.php';
 
 
-class Sales {
-
-    public function __construct() {
-        session_start();
+class Addstock{
+    
+    public function __construct(){
+         session_start();
         if (@$_SESSION['id'] != "") {
             GLOBAL $url;
             if (@$url[1] != "") {
                 switch ($url[1]) {
-                    case 'getallimages':
-                        $this->getallimages();
+                    case 'add':
+                        $this->add();
                         break;
                     default:
                         $this->errorview();
@@ -24,20 +24,14 @@ class Sales {
         } else {
             header('location:/index');
         }
+        
     }
-
     
-    
-    public function view() {
+    public function view(){
         $id = $_SESSION['id'];
         $user = new Usermodel();
         $user->getuserbyID($id);
-        require_once 'views/pages/sales.php';
-    }
-    
-
-    public function errorview() {
-         require_once 'views/pages/error.php';
+        require_once('views/pages/addstock.php');
     }
     
     
@@ -45,5 +39,12 @@ class Sales {
         
         
     }
-
+        
+        
+    
+    
+   
+    
+     
+    
 }

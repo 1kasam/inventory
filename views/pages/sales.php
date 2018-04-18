@@ -47,26 +47,26 @@ and open the template in the editor.
                     <div class="panel-body">
                         <form action="#">
                             <div class="input-group control-group after-add-more issue-from">
-                                <input type="text" name="addmore[]" class="form-control barcode_m" placeholder="Search or scan barcode..">
-                                <input type="text" name="qty[]" class="form-control barcode_qty_select" placeholder="QTY">
-                               
+                                <input id="mat" type="text" name="addmore[]" class="form-control barcode_m" placeholder="Search or scan barcode..">
+                                <input id="qty" type="text" name="qty[]" class="form-control barcode_qty_select" placeholder="QTY">
+
                                 <div class="input-group-btn"> 
                                     <button class="btn btn-success add-more" type="button"><i class="glyphicon glyphicon-plus"></i></button>
                                 </div>
                             </div>
                         </form>
                         <div class="divider">
-                            
+
                         </div>
-                        
+
                         <!-- Copy Fields -->
                         <div class="copy hide total_sales">
                             <div class="control-group input-group drop_result" style="margin-top:10px">
-                                <input type="text" name="addmore[]" class="form-control barcode_m" placeholder="Search or scan barcode..">
-                                <input type="text" name="qty[]" class="form-control barcode_qty" placeholder="QTY">
-                                <div  class="form-control barcode_price">2658$</div>
+                                <input id="admore" type="text" name="addmore[]" class="form-control barcode_m" >
+                                <input id="adqty" type="text" name="qty[]" class="form-control barcode_qty" placeholder="QTY">
+                                <div  class="form-control barcode_price"></div>
                                 <div class="input-group-btn"> 
-                                    <button class="btn btn-danger remove" type="button"><i class="glyphicon glyphicon-remove"></i></button>
+                                    <button id="mbutton" class="btn btn-danger remove" type="button"><i class="glyphicon glyphicon-remove"></i></button>
                                 </div>
                             </div>
                         </div>

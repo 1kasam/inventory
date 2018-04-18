@@ -5,10 +5,10 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    
+    <?php include("./views/includes/head.php");?>
     <body>
         <!--include Navigation -->
-        <?php include('includes/navigation.php');?>
+        <?php include("./views/includes/navigation.php");?>
         <div class="main">
             <div class="container-fluid">
                 <div class="row">
@@ -22,9 +22,6 @@ and open the template in the editor.
                  
             </div>
         </div>
-        <script  src="bootstrap3/js/jquery-1.9.1.min.js"></script>
-        <script  src="bootstrap3/js/bootstrap.min.js"></script>
-        <script  src="bootstrap3/js/bootstrap.js"></script>
-        <script  src="bootstrap3/js/myjs.js"></script>
+         <?php include("./views/includes/footer.php");?>
     </body>
 </html>

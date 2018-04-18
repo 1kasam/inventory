@@ -16,12 +16,11 @@
                     </div>
                     <div class="login_attr">
                         <hr>
-                        <form action="#" method="POST">
-                              
-                            <input type="email" name="email" class="form-control user_cred" placeholder="Email">
+                        <form id="loginform"  method="POST">
+                            <input type="" name="email" class="form-control user_cred" placeholder="Email">
                             <input type="password" name="password" class="form-control user_cred" placeholder="Password">
                             <hr>  
-                            <button type="submit" class="btn btn-primary my_button">Login</button>
+                            <button id="submit" type="submit" class="btn btn-primary my_button">Login</button>
                             
                         </form>
                         
@@ -31,6 +30,7 @@
                         <div class="row resetrow">
                             <a href="/register" class="reset_a">Register</a>
                         </div>
+                        <p id="loginresponse"></p>
 
                     </div>
 

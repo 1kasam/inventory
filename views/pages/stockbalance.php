@@ -19,7 +19,7 @@
                 <!--end images-->
                 
                 <div>TEST DIV</div>
-
+                <div>Another DIV</div>
 
             </div>
 

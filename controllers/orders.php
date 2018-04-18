@@ -1,11 +1,9 @@
 <?php
-require_once'./core/config.php';
 require_once'./models/user.php';
-
-
-class Sales {
-
-    public function __construct() {
+require_once './core/validations/formcontrols.php';
+class Orders{
+    
+    public function __construct(){
         session_start();
         if (@$_SESSION['id'] != "") {
             GLOBAL $url;
@@ -24,26 +22,21 @@ class Sales {
         } else {
             header('location:/index');
         }
+        
     }
-
     
     
-    public function view() {
+    
+    public function view(){
         $id = $_SESSION['id'];
         $user = new Usermodel();
         $user->getuserbyID($id);
-        require_once 'views/pages/sales.php';
-    }
-    
-
-    public function errorview() {
-         require_once 'views/pages/error.php';
+        require_once('views/pages/orders.php');
     }
     
     
-    public function add(){
-        
-        
-    }
-
+   
+    
+     
+    
 }

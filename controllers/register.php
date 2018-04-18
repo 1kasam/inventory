@@ -20,6 +20,12 @@ class Register {
                 case 'registeruser':
                     $this->registeruser();
                     break;
+                case 'login':
+                    $this->login();
+                    break;
+                case 'logout':
+                    $this->logout();
+                    break;
                 default:
                     $this->errorview();
             }
@@ -37,12 +43,10 @@ class Register {
         require_once('views/pages/error.php');
     }
 
-   
-
     public function registeruser() {
 
-        sleep(5);
-        
+        sleep(3);
+
         if (@$_POST['first'] && @$_POST['last'] && @$_POST['email'] && @$_POST['password']) {
 
             GLOBAL $conn;
@@ -53,7 +57,7 @@ class Register {
             $user->email = Validations::inputvalidation($_POST['email']);
             $user->password = Validations::inputvalidation($_POST['password']);
             $user->password = md5($user->password);
-            if($user->first== null || $user->last == null || $user->email == null || $user->password == null){
+            if ($user->first == null || $user->last == null || $user->email == null || $user->password == null) {
                 echo "Thereis an empty field..";
                 return;
             }
@@ -61,20 +65,71 @@ class Register {
             $check = $conn->prepare("SELECT * FROM users WHERE email ='$user->email'");
             $check->execute();
             if ($check->rowCount() > 0) {
-                    echo "User Already Exists";
-                    return;
+                echo "User Already Exists";
+                return;
             } else {
                 
                 $sql = $conn->prepare("INSERT INTO users (first, last, email, password) VALUES(?,?,?,?)");
-                $sql->execute(array($user->first, $user->last, $user->email, $user->password));
-               //header('Location:/home');
-                echo "Success";
+                $sql->bindParam(1, $user->first);
+                $sql->bindParam(2, $user->last);
+                $sql->bindParam(3, $user->email);
+                $sql->bindParam(4, $user->password);
+                $sql->execute();
+                 echo "Success";
                 return;
-                
             }
-        }else{
+        } else {
             echo "Please fll all fields!";
         }
+    }
+
+    public function login() {
+        sleep(2);
+
+        if (@$_POST['email'] && !empty(@$_POST['email']) && @$_POST['password'] && !empty(@$_POST['password'])) {
+
+            GLOBAL $url;
+            GLOBAL $conn;
+            $user = new Usermodel();
+            $user->email = Validations::inputvalidation($_POST['email']);
+            $user->password = Validations::inputvalidation($_POST['password']);
+            $user->email = Validations::validemail($user->email);
+            if ($user->email == null) {
+                echo "Please enter valid email";
+                return;
+            }
+
+            $sql = $conn->prepare("SELECT * FROM users WHERE email ='$user->email' AND password ='" . md5($user->password) . "'");
+            $sql->execute();
+            if ($sql->rowCount() > 0) {
+                $row = $sql->fetch(PDO::FETCH_ASSOC);
+                $user->id = $row['id'];
+                $user->first = $row['first'];
+                $user->last = $row['last'];
+                $user->email = $row['email'];
+                $user->password = $row['password'];
+                session_start();
+                $_SESSION['id'] = $user->id;
+                //send success to AJAX
+                echo "sucess";
+                return;
+            } else {
+
+                echo "Wrong email or password";
+            }
+        } else {
+            echo "There are empty Fields..";
+            return;
+        }
+    }
+    
+    
+
+    public function logout() {
+        session_start();
+        unset($_SESSION['id']);
+        session_destroy();
+        header("Location:/index");
     }
 
 }

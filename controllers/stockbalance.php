@@ -1,28 +1,39 @@
 <?php
 
+require_once'./models/user.php';
 require_once'./models/stockbalance.php';
 
 class Stockbalance {
 
     public function __construct() {
-        GLOBAL $url;
+        session_start();
+        if (@$_SESSION['id'] != "") {
+            GLOBAL $url;
+            if (@$url[1] != "") {
+                switch ($url[1]) {
+                    case 'getallimages':
+                        $this->getallimages();
+                        break;
+                    default:
+                        $this->errorview();
+                }
+            } else {
 
-        if (@$url[1] != "") {
-            switch ($url[1]) {
-                case 'getallimages':
-                    $this->getallimages();
-                    break;
-                default:
-                    $this->errorview();
+                $this->stockbalance();
             }
         } else {
-            $this->stockbalance();
+            header('location:/index');
         }
     }
     
+    
 
+    
     public function stockbalance() {
-
+        $id = $_SESSION['id'];
+        $user = new Usermodel();
+        $user->getuserbyID($id);
+        
         require_once('views/pages/stockbalance.php');
     }
     

@@ -23,7 +23,11 @@ Class Router {
         $controler_name = ucfirst($url[0]);
         
         $controler = new $controler_name;
+      
+        
         
     }
+    
+    
 
 }

@@ -14,5 +14,6 @@ class Index{
          require_once('views/pages/index.php');
     }
     
+    
 }
 

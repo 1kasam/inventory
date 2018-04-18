@@ -1,8 +1,36 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+require_once'./models/user.php';
+require_once './core/validations/formcontrols.php';
 
+class Users {
+
+    public function __construct() {
+        session_start();
+        if (@$_SESSION['id'] != "") {
+            GLOBAL $url;
+            if (@$url[1] != "") {
+                switch ($url[1]) {
+                    case 'getallimages':
+                        $this->getallimages();
+                        break;
+                    default:
+                        $this->errorview();
+                }
+            } else {
+
+                $this->view();
+            }
+        } else {
+            header('location:/index');
+        }
+    }
+
+    public function view() {
+        $id = $_SESSION['id'];
+        $user = new Usermodel();
+        $user->getuserbyID($id);
+        require_once('views/pages/users.php');
+    }
+
+}
